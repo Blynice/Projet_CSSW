@@ -1,21 +1,57 @@
-<!DOCTYPE html>
-<html lang="fr">
-  <head>
-    <title>article-sql-select</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-  </head>
+
+<?php
+$page = isset($_GET['sidenav'])?$_GET['sidenav']:'article-select';
+switch($page){
+
+  case 'article-delete':
+  $title = 'article-delete';
+  break;
+
+  case 'article-mdp':
+   $title = 'article-mdp';
+   break;
+
+   case 'article-select':
+   $title = 'article-select';
+   break;
+
+   case 'article-update':
+   $title = 'article-update';
+   break;
+
+   case 'article-cestquoisql.php':
+   $title = 'article-cestquoisql';
+   break;
+
+   case 'article-phpmyadmin.php':
+   $title = 'article-phpmyadmin';
+   break;
+
+   case 'article-lesjointures.php':
+   $title = 'article-lesjointures';
+   break;
+
+   case 'article-insert.php':
+   $title = 'article-insert';
+   break;
+
+   case 'article-sqlCreate.php':
+   $title = 'article-sqlCreate';
+   break;
+
+}
+
+?>
+
+
+<?php include ("header.php"); ?>
   <body>
 
-      <!-- include navbar.php(Ben) -->
-      <article class="container">
+    <?php include ("navbar.php"); ?>
+      <article class="container-fluid">
+<button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
       <h2>SQL SELECT<h2>
-      <!-- include header.php (Oceane) -->
+      <?php echo breadcrumbs(); ?>
 
       <h3>Les requetes SELECT en MySQL</h3>
       <p>La commande SELECT est la plus importante à comprendre en MySQL. Maitriser cette commande vous permettra d'établir des statistiques, sortir la valeur précise d'un chiffre d'affaire, trouver un item précis et pertinant, bref c'est la pierre angulaire de tout votre logiciel /site web.</p>
@@ -344,8 +380,6 @@
 </div>
 <p>La moyenne de (1+2+3+4+5) / 5 = 3</p>
 <button type="button" class="btn btn-warning">UNE QUESTION SUR L`ARTICLE</button>
-      <article>
+    
       <!-- include footer.php(Oceane) -->
-    <script src="./js/main.js"></script>
-  </body>
-</html>
+<?php include("footer.php") ?>
